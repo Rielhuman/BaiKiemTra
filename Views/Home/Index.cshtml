@@ -1,0 +1,31 @@
+﻿@model List<Cau4.Models.HangHoa>
+
+
+@{
+    ViewData["Title"] = "Danh sách Hàng Hóa";
+}
+
+<h2>Danh sách Hàng Hóa</h2>
+
+@if (Model != null && Model.Any())
+{
+    <table>
+        <tr>
+            <th>Mã Hàng</th>
+            <th>Tên Hàng</th>
+            <th>Ghi Chú</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.TenHang</td>
+                <td>@item.GhiChu</td>
+            </tr>
+        }
+    </table>
+}
+else
+{
+    <p>Không có dữ liệu!</p>
+}
